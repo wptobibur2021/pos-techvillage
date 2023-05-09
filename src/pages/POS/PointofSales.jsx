@@ -5,7 +5,7 @@ import TotalPos from "../../components/POS/TotalPos";
 import ButtonPos from "../../components/POS/ButtonPos";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import SearchPos from "../../components/POS/searchPos";
+import SearchPos from "../../components/POS/SearchPos";
 import CatPos from "../../components/POS/CatPos";
 import ProductPos from "../../components/POS/ProductPos";
 import { useSelector } from "react-redux";

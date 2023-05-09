@@ -1,4 +1,3 @@
-import React from "react";
 import { AiOutlineFullscreen, AiOutlineSearch } from "react-icons/ai";
 
 const SearchPos = () => {
