@@ -49,6 +49,14 @@ const PointofSales = () => {
           </div>
         </div>
       </div>
+      <div className="py-5 bg-button-bg text-blue-800">
+        <p className="text-center">
+          Design & development by{" "}
+          <a href="https://tobibur.me" target="_blank">
+            Tobibur
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
