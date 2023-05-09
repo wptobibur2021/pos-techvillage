@@ -11,25 +11,25 @@ import { SlNote } from "react-icons/sl";
 const MenuPos = () => {
   return (
     <div>
-      <div className="flex gap-3 mb-5 items-center justify-between">
+      <div className="flex gap-1 md:gap-3 mb-5 items-center justify-between">
         <div className="cursor-pointer">
-          <MdMenu className=" text-2xl" />
+          <MdMenu className="text-2xl" />
         </div>
-        <div className="flex gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-1 px-5 rounded">
+        <div className="flex text-lg gap-1 md:gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-2 px-3 md:py-1 md:px-5 rounded">
           <SlNote />
-          <p>Note</p>
+          <p className="hidden md:block">Note</p>
         </div>
-        <div className="flex gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-1 px-3 rounded">
+        <div className="flex text-lg gap-1 md:gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-2 px-3 md:py-1 md:px-3 rounded">
           <FaShippingFast />
-          <p>Shipping</p>
+          <p className="hidden md:block">Shipping</p>
         </div>
-        <div className="flex gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-1 px-3 rounded">
+        <div className="flex text-lg gap-1 md:gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-2 px-3 md:py-1 md:px-3 rounded">
           <AiOutlineFieldTime />
-          <p>Hold Orders</p>
+          <p className="hidden md:block">Hold Orders</p>
         </div>
-        <div className="flex gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-1 px-3 rounded">
+        <div className="flex text-lg gap-1 md:gap-3 items-center cursor-pointer bg-button-bg text-blue-800 py-2 px-3 md:py-1 md:px-3 rounded">
           <AiFillPlusCircle />
-          <p>New Item</p>
+          <p className="hidden md:block">New Item</p>
         </div>
       </div>
       <div className="flex items-center justify-between rounded p-3 bg-button-bg text-blue-800">

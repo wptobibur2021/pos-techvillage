@@ -4,30 +4,54 @@ import {
   AiFillMinusCircle,
   AiFillPlusCircle,
 } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  cartDecrement,
+  cartIncrement,
+  removeCart,
+} from "../../features/cart/cartSlice";
 
 const TablePos = () => {
+  const { carts } = useSelector((state) => state.carts);
+  const dispatch = useDispatch();
   return (
     <div className="my-5">
-      <div className="flex mb-2 justify-between text-gray-500 items-center">
-        <div>
-          <AiFillEdit className="text-xl cursor-pointer" />
-        </div>
-        <div className="flex w-full items-center justify-between border p-2">
-          <div className="">
-            <h2>Pure White & blue sleeve</h2>
+      {carts.map((cart) => (
+        <div
+          key={cart.id}
+          className="flex mb-2 gap-1 md:gap-0 justify-between text-gray-500 items-center"
+        >
+          <div>
+            <AiFillEdit className="text-lg md:text-xl cursor-pointer" />
           </div>
-          <p>$455.00</p>
-          <div className="flex gap-2 justify-between items-center">
-            <AiFillMinusCircle className="text-xl cursor-pointer" />
-            <p>2</p>
-            <AiFillPlusCircle className="text-xl cursor-pointer" />
+          <div className="flex w-full items-center justify-between border p-2">
+            <div>
+              <h2 className="text-sm md:text-base">
+                {cart.model.slice(0, 15)}...
+              </h2>
+            </div>
+            <p className="text-xs md:text-base">{cart.price} ৳</p>
+            <div className="flex gap-2 justify-between items-center">
+              <AiFillMinusCircle
+                onClick={() => dispatch(cartDecrement(cart))}
+                className="text-base md:text-xl cursor-pointer"
+              />
+              <p className="text-xs md:text-base">{cart.proQty}</p>
+              <AiFillPlusCircle
+                onClick={() => dispatch(cartIncrement(cart))}
+                className="text-base md:text-xl cursor-pointer"
+              />
+            </div>
+            <p className="text-xs md:text-base">{cart.price * cart.proQty} ৳</p>
           </div>
-          <p>$455.00</p>
+          <div className="cursor-pointer">
+            <AiFillDelete
+              onClick={() => dispatch(removeCart(cart))}
+              className="text-base md:text-xl text-red-800"
+            />
+          </div>
         </div>
-        <div>
-          <AiFillDelete className="text-xl text-red-800 cursor-pointer" />
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
